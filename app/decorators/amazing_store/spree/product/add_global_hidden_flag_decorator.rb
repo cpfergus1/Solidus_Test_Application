@@ -1,9 +1,9 @@
-module AwesomeStore
+module AmazingStore
   module Spree
     module Product
-      module AddGlobalHiddenFlag
+      module AddGlobalHiddenFlagDecorator
         def available?
-          ENV['MAKE_PRODUCTS_UNAVAILABLE'] == 'true' && super
+          ENV['MAKE_PRODUCTS_UNAVAILABLE'] == false && super
         end
 
         ::Spree::Product.prepend self
