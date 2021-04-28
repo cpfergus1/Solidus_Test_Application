@@ -91,8 +91,13 @@ Spree.user_class = "Spree::LegacyUser"
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
 Spree::Event.subscribe 'order_finalized' do |event|
+  AmazingStore::OrderAnalyzer.new.analyze(event.payload[:order])
+end
+
+Spree::Event.subscribe 'order_finalized' do |event|
   AmazingStore::OrderFinalizationNotifier.new(event).run
 end
+
 
 # Other handler format
 # Spree::Event.subscribe /.*\.spree/ do |event|

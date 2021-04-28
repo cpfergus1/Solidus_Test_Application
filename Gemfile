@@ -22,7 +22,6 @@ gem 'redis-namespace'
 gem 'redis-rails'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
@@ -47,9 +46,9 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 3.26'
-  gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'database_cleaner-active_record'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -65,3 +64,4 @@ gem "foreman", "~> 0.87.2"
 gem "sidekiq", "~> 6.2"
 gem 'solidus_auth_devise'
 gem 'solidus_paypal_commerce_platform'
+gem 'deface'

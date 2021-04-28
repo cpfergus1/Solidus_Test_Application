@@ -8,6 +8,16 @@ Rails.application.routes.draw do
   mount Spree::Core::Engine, at: '/'
   mount Sidekiq::Web => '/sidekiq'
 
+  Spree::Core::Engine.routes.draw do
+    namespace :admin do
+      resources :orders, only: [] do
+        member do
+          put :remove_from_rejected
+        end
+      end
+    end
+  end
+
 mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

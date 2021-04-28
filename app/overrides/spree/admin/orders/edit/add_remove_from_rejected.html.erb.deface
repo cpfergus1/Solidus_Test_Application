@@ -1,0 +1,11 @@
+<!-- insert_before "erb[silent]:contains('if can?(:fire, @order)')" -->
+<li>
+  <% if @order.rejected? %>
+    <%= button_to(
+      t('spree.remove_from_rejected'),
+      remove_from_rejected_admin_order_url(@order),
+      method: :put,
+      class: 'btn btn-primary',
+    ) %>
+  <% end %>
+</li>

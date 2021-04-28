@@ -31,3 +31,5 @@
 
 en:
   hello: "Hello world"
+  spree:
+    remove_from_rejected: Remove from rejected

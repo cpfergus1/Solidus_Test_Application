@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_21_164714) do
+ActiveRecord::Schema.define(version: 2021_04_28_131055) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -350,6 +350,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_164714) do
     t.integer "store_id"
     t.string "approver_name"
     t.boolean "frontend_viewable", default: true, null: false
+    t.boolean "rejected"
     t.index ["approver_id"], name: "index_spree_orders_on_approver_id"
     t.index ["bill_address_id"], name: "index_spree_orders_on_bill_address_id"
     t.index ["completed_at"], name: "index_spree_orders_on_completed_at"
