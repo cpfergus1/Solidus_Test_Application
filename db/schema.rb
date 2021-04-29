@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_131055) do
+ActiveRecord::Schema.define(version: 2021_04_29_145542) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -81,6 +81,13 @@ ActiveRecord::Schema.define(version: 2021_04_28_131055) do
     t.string "refund_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "product_likes", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "product_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "spree_addresses", force: :cascade do |t|
@@ -1230,6 +1237,8 @@ ActiveRecord::Schema.define(version: 2021_04_28_131055) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "product_likes", "spree_products", column: "product_id", on_delete: :cascade
+  add_foreign_key "product_likes", "spree_users", column: "user_id", on_delete: :cascade
   add_foreign_key "spree_promotion_code_batches", "spree_promotions", column: "promotion_id"
   add_foreign_key "spree_promotion_codes", "spree_promotion_code_batches", column: "promotion_code_batch_id"
   add_foreign_key "spree_tax_rate_tax_categories", "spree_tax_categories", column: "tax_category_id"

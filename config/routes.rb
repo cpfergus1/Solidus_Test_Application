@@ -16,6 +16,11 @@ Rails.application.routes.draw do
         end
       end
     end
+    namespace :api, defaults: { format: 'json' } do
+      resources :products do
+        resource :product_like, only: :create
+      end
+    end
   end
 
 mount SolidusPaypalCommercePlatform::Engine, at: '/solidus_paypal_commerce_platform'
