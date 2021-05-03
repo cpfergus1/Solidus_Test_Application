@@ -98,7 +98,7 @@ Spree::Event.subscribe 'order_finalized' do |event|
   AmazingStore::OrderFinalizationNotifier.new(event).run
 end
 
-
+Spree::Api::ApiHelpers.product_attributes << :likes_count
 # Other handler format
 # Spree::Event.subscribe /.*\.spree/ do |event|
 #   AmazingStore::OrderFinalizationNotifier.new(event).run

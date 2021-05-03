@@ -62,6 +62,4 @@ gem 'solidus_paypal_commerce_platform'
 gem "foreman", "~> 0.87.2"
 
 gem "sidekiq", "~> 6.2"
-gem 'solidus_auth_devise'
-gem 'solidus_paypal_commerce_platform'
 gem 'deface'
