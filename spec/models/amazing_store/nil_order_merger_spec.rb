@@ -1,3 +1,4 @@
+require 'rails_helper'
 #spec/models/awesome_store/nil_order_merger_spec.rb
 RSpec.describe AmazingStore::NilOrderMerger do
   subject(:order_merger) { described_class.new(order) }

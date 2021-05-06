@@ -1,7 +1,7 @@
 module AmazingStore
   module Spree
     module Product
-      module AddGlobalHiddenFlagDecorator
+      module AddGlobalHiddenFlag
         def available?
           ENV['MAKE_PRODUCTS_UNAVAILABLE'] == false && super
         end

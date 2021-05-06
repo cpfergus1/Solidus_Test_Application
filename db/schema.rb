@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_130018) do
+ActiveRecord::Schema.define(version: 2021_05_03_202828) do
 
   create_table "action_mailbox_inbound_emails", force: :cascade do |t|
     t.integer "status", default: 0, null: false
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 2021_04_30_130018) do
     t.integer "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "amazing_store_users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "spree_api_key", limit: 48
+    t.integer "ship_address_id"
+    t.integer "bill_address_id"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

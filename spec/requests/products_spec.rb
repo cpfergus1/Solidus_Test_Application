@@ -9,13 +9,11 @@ RSpec.describe '/api/products', type: :request do
   describe 'GET /:slug' do
     it 'exposes the likes_count field' do
       product = create(:product)
+
       get spree.api_product_path(product)
 
       parsed_response = JSON.parse(response.body)
-      byebug
-      expect(parsed_response).to match(a_hash_including(
-        'product' => a_hash_including('likes_count' => 0),
-      ))
+      expect(parsed_response).to match(a_hash_including('likes_count' => nil))
     end
   end
 end

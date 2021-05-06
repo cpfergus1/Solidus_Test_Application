@@ -81,7 +81,7 @@ Spree::Api::Config.configure do |config|
   config.requires_authentication = true
 end
 
-Spree.user_class = "Spree::LegacyUser"
+Spree.user_class = "AmazingStore::User"
 
 # Rules for avoiding to store the current path into session for redirects
 # When at least one rule is matched, the request path will not be stored
@@ -98,8 +98,21 @@ Spree::Event.subscribe 'order_finalized' do |event|
   AmazingStore::OrderFinalizationNotifier.new(event).run
 end
 
-Spree::Api::ApiHelpers.product_attributes << :likes_count
+Spree::Api::Config.product_attributes <<  :likes_count
 # Other handler format
 # Spree::Event.subscribe /.*\.spree/ do |event|
 #   AmazingStore::OrderFinalizationNotifier.new(event).run
 # end
+
+Spree.config do |config|
+  # ...
+  config.roles.assign_permissions :customer_service, [
+    Spree::PermissionSets::OrderDisplay,
+    Spree::PermissionSets::UserDisplay,
+    Spree::PermissionSets::ProductDisplay,
+    AmazingStore::PermissionSets::UserUpdate
+  ]
+end
+Rails.application.config.to_prepare do
+  require_dependency 'spree/authentication_helpers'
+end

@@ -4,6 +4,7 @@ RSpec.describe 'Order rejected', :js, type: :feature do
 
   it 'can be removed from rejected' do
     order = create(:completed_order_with_totals, rejected: true)
+    byebug
     visit spree.edit_admin_order_path(order)
 
     click_button I18n.t('spree.remove_from_rejected')
