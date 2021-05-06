@@ -1,5 +1,6 @@
-PATH
-  remote: ../../../solidus
+GIT
+  remote: https://github.com/solidusio/solidus.git
+  revision: 69b9a0f74c850d1283f24854332036cfa69db071
   specs:
     solidus (3.1.0.alpha)
       solidus_api (= 3.1.0.alpha)
