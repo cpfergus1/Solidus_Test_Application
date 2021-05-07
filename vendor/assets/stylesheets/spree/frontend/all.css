@@ -8,4 +8,3 @@
  *= require_tree .
  *= require spree/frontend/solidus_paypal_commerce_platform
 */
-@import 'spree/frontend/colors.scss'
