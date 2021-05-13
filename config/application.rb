@@ -11,6 +11,14 @@ module AmazingStore
     # Load application's model / class decorators
     initializer 'spree.decorators' do |app|
       config.to_prepare do
+        Dir.glob(Rails.root.join('app/overrides/**/*.rb')) do |path|
+          require_dependency(path)
+        end
+      end
+    end
+    # Load application's model / class decorators
+    initializer 'spree.decorators' do |app|
+      config.to_prepare do
         Dir.glob(Rails.root.join('app/decorators/**/*.rb')) do |path|
           require_dependency(path)
         end

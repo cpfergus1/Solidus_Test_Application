@@ -3,7 +3,7 @@
 
 Spree.config do |config|
   # Core:
-  config.order_merger_class = "AmazingStore::NilOrderMerger"
+
   # Default currency for new sites
   config.currency = "USD"
 
@@ -81,7 +81,7 @@ Spree::Api::Config.configure do |config|
   config.requires_authentication = true
 end
 
-Spree.user_class = "AmazingStore::User"
+Spree.user_class = "Spree::LegacyUser"
 
 # Rules for avoiding to store the current path into session for redirects
 # When at least one rule is matched, the request path will not be stored
@@ -90,6 +90,7 @@ Spree.user_class = "AmazingStore::User"
 # the class name:
 #
 # Spree::UserLastUrlStorer.rules << 'Spree::UserLastUrlStorer::Rules::AuthenticationRule'
+
 Spree::Event.subscribe 'order_finalized' do |event|
   AmazingStore::OrderAnalyzer.new.analyze(event.payload[:order])
 end
