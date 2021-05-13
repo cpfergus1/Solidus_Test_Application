@@ -188,23 +188,7 @@ GEM
     discard (1.2.0)
       activerecord (>= 4.2, < 7)
     erubi (1.10.0)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     execjs (2.7.0)
-=======
-    execjs (2.8.0)
->>>>>>> Stashed changes
-=======
-    execjs (2.8.0)
->>>>>>> Stashed changes
-=======
-    execjs (2.8.0)
->>>>>>> Stashed changes
-=======
-    execjs (2.8.0)
->>>>>>> Stashed changes
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     factory_bot_rails (6.2.0)
@@ -277,8 +261,6 @@ GEM
     msgpack (1.4.2)
     nio4r (2.5.7)
     nokogiri (1.11.3-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.11.3-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paranoia (2.4.3)
@@ -452,7 +434,6 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
-  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
