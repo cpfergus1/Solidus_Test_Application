@@ -14,15 +14,18 @@ module AmazingStore
 
           has_attachment :attachment,
                         styles: {
-                        mini: '48x48>',
-                        small: '400x400>',
-                        product: '680x680>',
-                        large: '1200x1200>',
-                      },
+                          amazing_store_thumbnail: '60x60>',
+                          amazing_store_sample: '400x800>',
+                          amazing_store_sample_full: '1000x1000>',
+                          mini: '48x48>',
+                          small: '400x400>',
+                          product: '680x680>',
+                          large: '1200x1200>'
+                          },
                       default_style: :product
 
           def supported_content_type
-            unless attachment.content_type.in?(Spree::Config.allowed_image_mime_types)
+            unless attachment.content_type.in?(::Spree::Config.allowed_image_mime_types)
               errors.add(:attachment, :content_type_not_supported)
             end
           end
