@@ -9,17 +9,9 @@ Bundler.require(*Rails.groups)
 module AmazingStore
   class Application < Rails::Application
     # Load application's model / class decorators
-    initializer 'spree.decorators' do |app|
+    initializer 'spree.overrides' do |app|
       config.to_prepare do
         Dir.glob(Rails.root.join('app/overrides/**/*.rb')) do |path|
-          require_dependency(path)
-        end
-      end
-    end
-    # Load application's model / class decorators
-    initializer 'spree.decorators' do |app|
-      config.to_prepare do
-        Dir.glob(Rails.root.join('app/decorators/**/*.rb')) do |path|
           require_dependency(path)
         end
       end
@@ -34,13 +26,12 @@ module AmazingStore
     # in config/environments, which are processed later.
     #
     # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("extras")
-
+    config.eager_load_paths << Rails.root.join("lib")
     # Don't initialize this if factory_bot_rails is not part of the
     # current bundle group.
     if defined?(FactoryBotRails)
       initializer after: "factory_bot.set_factory_paths" do
-        require 'spree/testing_support'
+        require 'spree/testing_support/factory_bot'
         # The paths for solidus factories.
         solidus_paths = Spree::TestingSupport::FactoryBot.definition_file_paths
 
@@ -50,13 +41,13 @@ module AmazingStore
         # same name exists.
         extension_paths = []
         #  [
-        #   MySolidusExtension::Engine.root.join("lib/solidus_content/factories.rb"),
-        #   # alternative 1: MySolidusExtension::Engine.root.join("lib/solidus_content/factories/product.rb"),
-        #   # alternative 2: MySolidusExtension::Engine.root.join("lib/solidus_content/factories/product_factory.rb"),
-        #   # etc.
-        # ].map { |path| path.chomp(".rb") }
+          #   MySolidusExtension::Engine.root.join("lib/solidus_content/factories.rb"),
+          #   # alternative 1: MySolidusExtension::Engine.root.join("lib/solidus_content/factories/product.rb"),
+          #   # alternative 2: MySolidusExtension::Engine.root.join("lib/solidus_content/factories/product_factory.rb"),
+          #   # etc.
+          # ].map { |path| path.chomp(".rb") }
 
-        # The application factories, according to the place in which they're stored.
+          # The application factories, according to the place in which they're stored.
         app_paths = [
           Rails.root.join('lib', 'factories'),
           Rails.root.join('spec', 'factories'),

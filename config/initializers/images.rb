@@ -1,1 +1,0 @@
-#Spree::Image::ActiveStorageAttachment

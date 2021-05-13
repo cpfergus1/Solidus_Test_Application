@@ -114,6 +114,7 @@ Spree.config do |config|
     AmazingStore::PermissionSets::UserUpdate
   ]
 end
+
 Rails.application.config.to_prepare do
   require_dependency 'spree/authentication_helpers'
 end
