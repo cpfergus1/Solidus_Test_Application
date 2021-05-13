@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'amazing_store/order_finalization_notifier.rb'
+
 RSpec.describe AmazingStore::OrderFinalizationNotifier do
   it 'calls the external API' do
     order = double('Spree::Order')

@@ -1,5 +1,4 @@
 require 'rails_helper'
-require 'amazing_store/order_analyzer'
 
 RSpec.describe Spree::Order do
   describe '#finalize!' do

@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/solidusio/solidus.git
-  revision: 69b9a0f74c850d1283f24854332036cfa69db071
+  revision: a8e807e7da25718648ca6318d1499a1c2f49e0f1
   specs:
     solidus (3.1.0.alpha)
       solidus_api (= 3.1.0.alpha)
@@ -132,8 +132,8 @@ GEM
       activerecord (>= 4.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (10.2.4.0)
-      execjs
+    autoprefixer-rails (10.2.5.0)
+      execjs (< 2.8.0)
     awesome_nested_set (3.4.0)
       activerecord (>= 4.0.0, < 7.0)
     bcrypt (3.1.16)
@@ -167,7 +167,7 @@ GEM
     concurrent-ruby (1.1.8)
     connection_pool (2.2.5)
     crass (1.0.6)
-    database_cleaner-active_record (2.0.0)
+    database_cleaner-active_record (2.0.1)
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
@@ -189,10 +189,10 @@ GEM
       activerecord (>= 4.2, < 7)
     erubi (1.10.0)
     execjs (2.7.0)
-    factory_bot (6.1.0)
+    factory_bot (6.2.0)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.1.0)
-      factory_bot (~> 6.1.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     ffi (1.15.0)
     font-awesome-rails (4.7.0.7)
@@ -256,7 +256,7 @@ GEM
     minitest (5.14.4)
     monetize (1.11.0)
       money (~> 6.12)
-    money (6.14.1)
+    money (6.16.0)
       i18n (>= 0.6.4, <= 2)
     msgpack (1.4.2)
     nio4r (2.5.7)
@@ -273,7 +273,7 @@ GEM
     pg (1.2.3)
     polyglot (0.3.5)
     public_suffix (4.0.6)
-    puma (5.2.2)
+    puma (5.3.1)
       nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
@@ -313,7 +313,7 @@ GEM
       activerecord (>= 5.2.4)
       activesupport (>= 5.2.4)
       i18n
-    rb-fsevent (0.10.4)
+    rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redis (4.2.5)
@@ -383,7 +383,7 @@ GEM
       paranoia (~> 2.4)
       solidus_core (>= 2.6, < 4)
       solidus_support (~> 0.5)
-    solidus_paypal_commerce_platform (0.3.1)
+    solidus_paypal_commerce_platform (0.3.2)
       deface (~> 1.5)
       paypal-checkout-sdk
       solidus_core (>= 2.0.0, < 4)
