@@ -136,7 +136,7 @@ GEM
     awesome_nested_set (3.4.0)
       activerecord (>= 4.0.0, < 7.0)
     aws-eventstream (1.1.1)
-    aws-partitions (1.457.0)
+    aws-partitions (1.460.0)
     aws-sdk-core (3.114.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.239.0)
@@ -276,7 +276,7 @@ GEM
       i18n (>= 0.6.4, <= 2)
     msgpack (1.4.2)
     nio4r (2.5.7)
-    nokogiri (1.11.4-x86_64-darwin)
+    nokogiri (1.11.5-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     paranoia (2.4.3)
@@ -462,6 +462,7 @@ DEPENDENCIES
   factory_bot_rails
   foreman (~> 0.87.2)
   jbuilder (~> 2.7)
+  jquery-rails
   listen (~> 3.3)
   pg
   puma (~> 5.0)

@@ -62,7 +62,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'solidus', path: '~/solidus'
 gem 'solidus_auth_devise'
 gem 'solidus_paypal_commerce_platform'
-
+gem 'jquery-rails'
 
 gem "foreman", "~> 0.87.2"
 gem "aws-sdk-s3"
