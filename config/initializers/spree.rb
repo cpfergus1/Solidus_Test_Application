@@ -19,7 +19,7 @@ Spree.config do |config|
   # config.inventory_cache_threshold = 3
 
   # Configure adapter for attachments on products and taxons (use ActiveStorageAttachment or PaperclipAttachment)
-  config.image_attachment_module = 'AmazingStore::Spree::Image::MyActiveStorageAttachment'
+  config.image_attachment_module = 'Spree::Image::ActiveStorageAttachment'
   config.taxon_attachment_module = 'Spree::Taxon::ActiveStorageAttachment'
 
   # Defaults
@@ -33,7 +33,7 @@ Spree.config do |config|
   # Frontend:
 
   # Custom logo for the frontend
-  # config.logo = "logo/solidus.svg"
+  config.logo = "diamond-hands.svg"
 
   # Template to use when rendering layout
   # config.layout = "spree/layouts/spree_application"

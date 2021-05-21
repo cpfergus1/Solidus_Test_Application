@@ -5,7 +5,10 @@
 // the compiled file.
 //
 //= require jquery
-//= require rails-ujs
+//= require jquery.validate/jquery.validate.min
+//= require jquery.validate/phone-validation
+//= require jquery_ujs
 //= require spree/backend
+
 //= require_tree .
 //= require spree/backend/solidus_paypal_commerce_platform

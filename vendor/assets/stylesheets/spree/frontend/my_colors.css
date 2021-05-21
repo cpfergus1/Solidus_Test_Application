@@ -1,0 +1,12 @@
+
+a {
+  color: #942c7c;
+}
+
+nav #main-nav-bar li#link-to-cart a {
+  color: #942c7c;
+}
+
+input[type="submit"], input[type="button"], input[type="reset"], button, a.button {
+  background-color: #942c7c;
+}
